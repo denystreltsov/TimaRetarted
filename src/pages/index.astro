@@ -5,23 +5,25 @@ import TopDes from "../components/TopDes.astro";
 import MidCards from "../components/MidCards.astro";
 import WhyUs from "../components/WhyUs.astro";
 import Contacts from "../components/Contacts.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<BaseLayout>
-			<TopBar/>
-			<TopDes/>
-			<MidCards/>
-			<WhyUs/>
-			<Contacts/>
-		</BaseLayout>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <BaseLayout>
+      <TopBar />
+      <TopDes />
+      <MidCards />
+      <WhyUs />
+      <Contacts />
+    <Footer />
+    </BaseLayout>
+  </body>
 </html>
