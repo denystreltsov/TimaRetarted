@@ -1,18 +1,95 @@
 ---
+
 ---
 
+<div class="w-full hidden" id="menu-holder">
+  <div
+    class="bg-white flex flex-col z-10 items-start w-full h-[450px] absolute"
+  >
+    <div class="h-9 w-full"></div>
+    <button id="close-menu" class="absolute top-4 right-2"
+      ><img class="w-6 h-6" src="/close.png" alt="close menu" /></button
+    >
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <a href="">Главная</a>
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <a href="">Такси</a>
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <a href="">Сервис</a>
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <a href="">Запчасти</a>
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <a href=""> Контакты</a>
+    <hr class="border-1 my-2 border-black opacity-25 border-solid w-full" />
+    <div class="mt-2 w-full flex flex-col items-center">
+      <div class="text-2xl">8 495 777 66 55</div>
+      <div class="text-gray-500">По всем вопросам</div>
+      <div class="flex mb-4">
+        <img
+          class="h-8 w-8 object-contain"
+          src="/teleg.png "
+          alt="telegram icon"
+        />
+        <img class="h-8 w-8 object-contain" src="vk.png" alt="vk icon" />
+      </div>
+    </div>
+  </div>
+</div>
+
 <div
-  class="flex justify-between self-stretch border-4 border-solid border-red-500"
+  class="flex justify-between self-stretch "
 >
   <div class="flex items-center justify-between gap-4 ml-[5%]">
-    <img class='h-24 w-24 object-contain mr-8' src="/logo.png" alt="Logo of Vay">
-    <a href="">Главная</a>
-    <a href="">Такси</a>
-    <a href="">Сервис</a>
-    <a href="">Запчасти</a>
-    <a href=""> Контакты</a>
+    <img
+      class="h-24 w-24 object-contain mr-8"
+      src="/logo.png"
+      alt="Logo of Vay"
+    />
+    <span class="max-md:hidden" id="a-container">
+      <a href="">Главная</a>
+      <a href="">Такси</a>
+      <a href="">Сервис</a>
+      <a href="">Запчасти</a>
+      <a href=""> Контакты</a>
+    </span>
+    <div>
+      <button id="menu-button" class="md:hidden absolute top-4 right-2"
+        ><img class="h-6 w-6" src="/button.png" alt="button" /></button
+      >
+    </div>
+    <script >
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+      if (mediaQuery.matches) {
+        const button = document.querySelector("#menu-button");
+        button.addEventListener("click", (e) => {
+          const menu_holder = document.querySelector("#menu-holder");
+          menu_holder.classList.remove("hidden");
+
+          const close_button = document.querySelector("#close-menu");
+          close_button.addEventListener("click", (e) => {
+            menu_holder.classList.add('hidden');
+          });
+        });
+      } else {
+        mediaQuery.addEventListener("change", (e) => {
+          console.log("Event Happpening");
+          if (mediaQuery.matches) {
+        const button = document.querySelector("#menu-button");
+        button.addEventListener("click", (e) => {
+          const menu_holder = document.querySelector("#menu-holder");
+          menu_holder.classList.remove("hidden");
+
+          const close_button = document.querySelector("#close-menu");
+          close_button.addEventListener("click", (e) => {
+            menu_holder.classList.add('hidden');
+          });
+        });
+      }
+        });
+      }
+    </script>
   </div>
-  <div class="flex flex-col justify-center items-center mr-[5%]">
+  <div class="max-md:hidden flex flex-col justify-center items-center mr-[5%]">
     <div class="font-semibold text-xl">8 495 777 66 55</div>
     <div class="font-light text-gray-500">По всем вопросам</div>
   </div>
